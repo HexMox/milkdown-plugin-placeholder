@@ -1,2 +1,4 @@
+.*
 app
 src
+vite.config.ts
