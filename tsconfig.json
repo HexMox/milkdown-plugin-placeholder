@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES6",
+    "module": "ES6",
     "rootDir": "src",
     "outDir": "lib",
     "lib": ["dom", "es2017", "es2018", "es2019"],
