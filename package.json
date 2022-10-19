@@ -8,7 +8,7 @@
   "packageManager": "yarn@3.2.4",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
-    "prepare": "husky install",
+    "postinstall": "husky install",
     "dev": "vite",
     "tsc": "tsc --noEmit",
     "build": "tsc"
