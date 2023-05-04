@@ -22,7 +22,13 @@ export const placeholder: MilkdownPlugin = (pre) => {
     const update = (view: EditorView) => {
       const placeholder = ctx.get(placeholderCtx)
       const doc = view.state.doc
-      if (view.editable && doc.childCount === 1 && doc.firstChild?.isTextblock && doc.firstChild?.content.size === 0) {
+      if (
+        view.editable &&
+        doc.childCount === 1 &&
+        doc.firstChild?.isTextblock &&
+        doc.firstChild?.content.size === 0 &&
+        doc.firstChild?.type.name === 'paragraph'
+      ) {
         view.dom.setAttribute('data-placeholder', placeholder)
       } else {
         view.dom.removeAttribute('data-placeholder')
