@@ -1,20 +1,20 @@
-import type { MilkdownPlugin, Timer } from '@milkdown/ctx'
+import type { MilkdownPlugin, TimerType } from '@milkdown/ctx'
 import type { EditorView } from '@milkdown/prose/view'
 import { createSlice, createTimer } from '@milkdown/ctx'
 import { InitReady, prosePluginsCtx } from '@milkdown/core'
 import { Plugin, PluginKey } from '@milkdown/prose/state'
 
 export const placeholderCtx = createSlice('Please input here...', 'placeholder')
-export const placeholderTimerCtx = createSlice([] as Timer[], 'editorStateTimer')
+export const placeholderTimerCtx = createSlice([] as TimerType[], 'editorStateTimer')
 
 export const PlaceholderReady = createTimer('PlaceholderReady')
 
 const key = new PluginKey('MILKDOWN_PLACEHOLDER')
 
-export const placeholder: MilkdownPlugin = (pre) => {
-  pre.inject(placeholderCtx).inject(placeholderTimerCtx, [InitReady]).record(PlaceholderReady)
+export const placeholder: MilkdownPlugin = (ctx) => {
+  ctx.inject(placeholderCtx).inject(placeholderTimerCtx, [InitReady]).record(PlaceholderReady)
 
-  return async (ctx) => {
+  return async () => {
     await ctx.waitTimers(placeholderTimerCtx)
 
     const prosePlugins = ctx.get(prosePluginsCtx)

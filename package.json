@@ -31,9 +31,9 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@milkdown/preset-commonmark": "^6",
-    "@milkdown/preset-gfm": "^6",
-    "@milkdown/theme-nord": "^6",
+    "@milkdown/preset-commonmark": "^7",
+    "@milkdown/preset-gfm": "^7",
+    "@milkdown/theme-nord": "^7",
     "@types/node": "^16.7.13",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
@@ -50,9 +50,10 @@
     "vite": "^2.5.3"
   },
   "dependencies": {
-    "@milkdown/core": "^6",
-    "@milkdown/ctx": "^6",
-    "@milkdown/prose": "^6"
+    "@milkdown/core": "^7",
+    "@milkdown/ctx": "^7",
+    "@milkdown/prose": "^7",
+    "@milkdown/transformer": "^7"
   },
   "lint-staged": {
     "*.{ts,js}": [

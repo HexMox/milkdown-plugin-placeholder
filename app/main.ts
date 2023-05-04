@@ -1,8 +1,10 @@
 import { Editor, defaultValueCtx } from '@milkdown/core'
+import { commonmark } from '@milkdown/preset-commonmark'
 import { gfm } from '@milkdown/preset-gfm'
-import { nordLight } from '@milkdown/theme-nord'
+import { nord } from '@milkdown/theme-nord'
 import { placeholder, placeholderCtx } from '../src/index'
 
+import '@milkdown/theme-nord/style.css'
 import '../styles/index.css'
 
 const markdown = `
@@ -36,12 +38,13 @@ const root = document.getElementById('app')
 
 if (!root) throw new Error()
 
-new Editor()
+Editor.make()
   .config((ctx) => {
     ctx.set(defaultValueCtx, '')
     ctx.set(placeholderCtx, 'Have fun!')
   })
-  .use(nordLight)
+  .config(nord)
+  .use(commonmark)
   .use(gfm)
   .use(placeholder)
   .create()
