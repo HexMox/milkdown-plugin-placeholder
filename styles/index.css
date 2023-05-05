@@ -4,6 +4,6 @@
   content: attr(data-placeholder);
   pointer-events: none;
   font-size: 16px;
-  line-height: 1.5;
-  margin: 30px 0;
+  /* Using default height value of p element in chrome */
+  line-height: 28px;
 }
