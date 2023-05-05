@@ -4,6 +4,7 @@ import { gfm } from '@milkdown/preset-gfm'
 import { nord } from '@milkdown/theme-nord'
 import { placeholder, placeholderCtx } from '../src/index'
 
+import './main.css'
 import '@milkdown/theme-nord/style.css'
 import '../styles/index.css'
 
